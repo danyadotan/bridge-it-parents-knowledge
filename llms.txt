@@ -3,8 +3,10 @@
 Open-source, non-commercial agent skills by Bridge-iT (https://www.dynamicbridge.io) and "כזו אני" (https://kazoani.com) for navigating official Israeli child rights, special education committees, and public services in Hebrew.
 
 - Author & Brands: Danya Dotan | Bridge-iT (https://www.dynamicbridge.io) | כזו אני (https://kazoani.com)
+- Contact: +972.54.22.99.000
 - Privacy: No personal or medical data is collected or stored.
 - License: CC BY-NC 4.0 (Non-Commercial, Attribution to Bridge-iT / כזו אני required).
+- Disclaimer: General informational guidance only. Does not constitute legal, medical, or therapeutic advice. Use at your own responsibility.
 
 ## Skills
 
