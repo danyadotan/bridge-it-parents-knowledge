@@ -1,0 +1,10 @@
+# Bridge-iT Parents Knowledge (IL Civic Skills)
+
+Open-source, non-commercial agent skills by Bridge-iT for navigating official Israeli child rights, special education committees, and public services in Hebrew.
+
+- Privacy: No personal or medical data is collected or stored.
+- License: CC BY-NC 4.0 (Non-Commercial, Attribution to Bridge-iT required).
+
+## Skills
+
+- [IL Child Rights Navigator](/skills/il-child-rights-navigator/SKILL.md): Action-oriented navigation for Israeli parents dealing with special education committees (ועדת זכאות ואפיון), missing protocols, appeals, and child rights.
