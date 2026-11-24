@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Danya Dotan | Bridge-iT | כזו אני (kazoani.com)" />
+  <meta name="description" content="מלווה AI לזכויות הילד וועדות זכאות בישראל מבית Bridge-iT ו'כזו אני' — מידע ציבורי רשמי, ללא שמירת נתונים אישיים." />
+  <title>Bridge-iT × כזו אני | ניווט זכויות הילד וועדות זכאות בישראל</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --border: #e2e8f0;
+      --soft: #eff6ff;
+      --privacy-bg: #f0fdf4;
+      --privacy-border: #bbf7d0;
+      --privacy-text: #166534;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; }
+    .brand a { color: var(--text); text-decoration: none; }
+    .brand a:hover { color: var(--primary); }
+    .brand span { color: var(--primary); font-weight: 600; font-size: 0.95rem; margin-right: 6px; }
+    .header-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .gh-link {
+      text-decoration: none;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: var(--card);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+    }
+    .gh-link:hover { border-color: var(--text); color: var(--text); }
+
+    .privacy-banner {
+      background: var(--privacy-bg);
+      border: 1px solid var(--privacy-border);
+      color: var(--privacy-text);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+      font-size: 0.95rem;
+    }
+    .privacy-banner strong { display: block; margin-bottom: 4px; font-size: 1rem; }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px 24px;
+      margin-bottom: 24px;
+    }
+    h1 { margin: 0 0 12px; font-size: 1.75rem; line-height: 1.3; }
+    .subtitle { color: var(--muted); margin: 0 0 24px; font-size: 1.03rem; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .btn-group {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-secondary {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: #f1f5f9; }
+
+    .info-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .info-btn:hover, .info-btn[aria-expanded="true"] {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .info-bubble {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: 270px;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      z-index: 20;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+    }
+    .info-bubble.open { display: block; }
+
+    .why-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-right: 4px solid var(--primary);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin-bottom: 30px;
+    }
+    .why-box h2 { margin: 0 0 10px; font-size: 1.2rem; }
+    .why-box p { margin: 0 0 12px; color: var(--muted); font-size: 0.98rem; }
+    .why-box a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .why-box a:hover { text-decoration: underline; }
+    .brand-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .brand-pill {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--primary);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .brand-pill:hover { background: #dbeafe; }
+
+    section { margin-top: 32px; }
+    h2 { font-size: 1.25rem; margin: 0 0 14px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .prompt-card {
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    .prompt-card:hover { border-color: var(--primary); }
+    .prompt-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      background: var(--soft);
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .prompt-text { margin: 0; font-size: 0.95rem; }
+    .copy-hint { display: block; margin-top: 10px; font-size: 0.8rem; color: var(--muted); }
+
+    .placeholder-card {
+      border: 1.5px dashed #cbd5e1;
+      background: #f8fafc;
+      color: var(--muted);
+    }
+    .placeholder-card h3 { margin: 0 0 6px; font-size: 1rem; color: var(--text); }
+    .placeholder-card p { margin: 0 0 12px; font-size: 0.9rem; }
+    .placeholder-link {
+      font-size: 0.88rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .disclaimer-box {
+      margin-top: 40px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .disclaimer-box strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.86rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    footer a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
+    .ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <a href="https://www.dynamicbridge.io" target="_blank" rel="noopener">Bridge-iT</a>
+        <span>×</span>
+        <a href="https://kazoani.com" target="_blank" rel="noopener">כזו אני</a>
+      </div>
+      <div class="header-links">
+        <a class="gh-link" href="https://www.dynamicbridge.io" target="_blank" rel="noopener">Dynamic Bridge ↗</a>
+        <a class="gh-link" href="https://kazoani.com" target="_blank" rel="noopener">כזו אני ↗</a>
+        <a class="gh-link" href="tel:+972542299000">📞 <span class="ltr">+972.54.22.99.000</span></a>
+        <a class="gh-link" href="https://github.com/danyadotan/bridge-it-parents-knowledge" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="privacy-banner">
+        <strong>🔒 פרטיות מלאה לפני הכל</strong>
+        הכלי הזה לא מבקש, לא אוסף ולא שומר שום מידע אישי — ובטח שלא פרטים אישיים או רפואיים שלך או של ילדייך.
+        הוא שולף ומסדר עבורך אך ורק מידע ציבורי רשמי ועדכני על זכויות הילד וההורים מול משרד החינוך, העירייה, הבריאות והרווחה.
+      </div>
+
+      <div class="hero">
+        <h1>מלווה AI לזכויות הילד וועדות זכאות בישראל</h1>
+        <p class="subtitle">
+          קיבלת מכתב על ועדת זכאות ואפיון? חסרים פרוטוקולים משנים קודמות?
+          הסקיל מבית <strong>Bridge-iT</strong> הופך בירוקרטיה מציפה להיררכיית פעולה ברורה — צעד אחד מיידי, תבניות הודעה מוכנות לשליחה ופרטי קשר עדכניים.
+        </p>
+
+        <div class="actions">
+          <div class="btn-group">
+            <button id="copySkillBtn" class="btn btn-primary">העתק לשימוש מיידי</button>
+            <button class="info-btn" aria-label="מידע על העתקה" aria-expanded="false" data-target="bubble-copy">ⓘ</button>
+            <div id="bubble-copy" class="info-bubble" role="tooltip">
+              מעתיק את ההנחיות כטקסט. פותחים שיחה חדשה ב-Gemini, ChatGPT או Claude, מדביקים — ומתחילים לשאול מיד.
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button id="downloadSkillBtn" class="btn btn-secondary">הורד קובץ SKILL.md</button>
+            <button class="info-btn" aria-label="מידע על הורדה" aria-expanded="false" data-target="bubble-download">ⓘ</button>
+            <div id="bubble-download" class="info-bubble" role="tooltip">
+              מוריד קובץ התקנה קבוע לסוכנים שתומכים בייבוא סקילס (כמו Gemini Skills או Claude), כך שהעוזר יופעל אוטומטית בכל שיחה עתידית.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-box">
+        <h2>מידע נגיש הוא התיקון</h2>
+        <p>
+          חוסר נגישות למידע ציבורי רשמי הוא מה שמאפשר לעיגולי פינות, לחוסר שקיפות ולמיצוי חלקי של זכויות להתקיים בשקט — בתוך הקהילה, בעירייה ובשם המדינה.
+        </p>
+        <p>
+          המיזם נולד מתוך החיבור שבין הבית לקליניקה — כאמא וכמטפלת רגשית בילדים ומשפחות המתמודדות עם הפרעת קשב וכל הנלווה לה (<a href="https://kazoani.com" target="_blank" rel="noopener">כזו אני</a>), ומתוך תשתית הכלים של <a href="https://www.dynamicbridge.io" target="_blank" rel="noopener">Bridge-iT</a>. כשאת מכירה את הנהלים שעליהם המערכת מחויבת להישען, קל יותר לעמוד על הצרכים של הילד שלך — וגם לגרום למערכת החינוך והרווחה לתת הסברים, לקחת אחריות ולהפוך לסביבה בריאה ומכילה יותר לכולם.
+        </p>
+        <div class="brand-pills">
+          <a class="brand-pill" href="https://www.dynamicbridge.io" target="_blank" rel="noopener">Bridge-iT (dynamicbridge.io) ↗</a>
+          <a class="brand-pill" href="https://kazoani.com" target="_blank" rel="noopener">"כזו אני" (kazoani.com) ↗</a>
+          <a class="brand-pill" href="https://wa.me/972542299000" target="_blank" rel="noopener">וואטסאפ / טלפון: <span class="ltr">+972.54.22.99.000</span> ↗</a>
+        </div>
+      </div>
+
+      <section>
+        <h2>איך מתחילים? (לחצי על דוגמה להעתקה)</h2>
+        <div class="grid">
+          <div class="card prompt-card" onclick="copyText(this, 'לא קיבלתי עד היום את הפרוטוקולים ומסמכי ועדת הזכאות והאפיון מ-2020 ומ-2023. מה עושים עכשיו?')">
+            <span class="prompt-tag">מסמכים חסרים</span>
+            <p class="prompt-text">"לא קיבלתי את הפרוטוקולים של ועדת הזכאות מ-2020 ו-2023. מה עושים עכשיו?"</p>
+            <span class="copy-hint">לחצי להעתקה</span>
+          </div>
+
+          <div class="card prompt-card" onclick="copyText(this, 'קיבלתי זימון לוועדת זכאות ואפיון בעוד שבועיים ואני מוצפת. מה הזכויות שלי ומה הצעד הראשון?')">
+            <span class="prompt-tag">הכנה לוועדה</span>
+            <p class="prompt-text">"קיבלתי זימון לוועדת זכאות ואפיון בעוד שבועיים. מה הזכויות שלי ומה הצעד הראשון?"</p>
+            <span class="copy-hint">לחצי להעתקה</span>
+          </div>
+
+          <div class="card prompt-card" onclick="copyText(this, 'המועד של ועדת הזכאות לא מתאים לי ואני צריכה לדחות אותו. למי פונים ומה כותבים?')">
+            <span class="prompt-tag">דחיית מועד</span>
+            <p class="prompt-text">"המועד של ועדת הזכאות לא מתאים לי ואני צריכה לדחות אותו. למי פונים ומה כותבים?"</p>
+            <span class="copy-hint">לחצי להעתקה</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>כלים משלימים וסקילס נוספים מבית Bridge-iT</h2>
+        <div class="grid">
+          <div class="card placeholder-card">
+            <h3>📌 מה הצעד הבא שלך כאן?</h3>
+            <p>טאב קטן שיושב בצד המסך ושומר בדפדפן שלך מה עשית ומה הצעד הבא — כדי שאם יצאת מהמחשב באמצע משימה, תחזרי בדיוק לאותה נקודה.</p>
+            <a class="placeholder-link" href="#TODO-ADD-LINK">קישור יתווסף כאן בקרוב →</a>
+          </div>
+
+          <div class="card placeholder-card">
+            <h3>➕ מקום לסקיל נוסף</h3>
+            <p>מקום שמור לסקיל הבא של Bridge-iT (למשל: התמצאות במערכת המשפט, ביטוח לאומי או כלי עזר נוסף).</p>
+            <a class="placeholder-link" href="#TODO-ADD-SKILL">בבנייה →</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="disclaimer-box">
+        <strong>הבהרה משפטית (Disclaimer)</strong>
+        המידע, הכלים והסקילס המוצגים באתר זה מבית Bridge-iT ו"כזו אני" ניתנים כשירות ציבורי ולמטרות מידע כללי והתמצאות בלבד, ואינם מהווים ייעוץ משפטי, רפואי, פסיכולוגי או טיפולי מכל סוג שהוא, ואינם מחליפים פנייה לאנשי מקצוע מוסמכים או בדיקה ישירה מול הרשויות הרשמיות. האתר אינו אוסף ואינו שומר מידע אישי או רפואי. השימוש במידע ובכלי ה-AI הוא באחריות המשתמש/ת בלבד.
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-row">
+        <span>© Bridge-iT × כזו אני · רישיון CC BY-NC 4.0 (ללא שימוש מסחרי)</span>
+        <div>
+          <a href="tel:+972542299000"><span class="ltr">+972.54.22.99.000</span></a> ·
+          <a href="https://www.dynamicbridge.io" target="_blank" rel="noopener">dynamicbridge.io</a> ·
+          <a href="https://kazoani.com" target="_blank" rel="noopener">kazoani.com</a> ·
+          <a href="/llms.txt">llms.txt לסוכנים</a> ·
+          <a href="https://github.com/danyadotan/bridge-it-parents-knowledge" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const SKILL_PATH = './skills/il-child-rights-navigator/SKILL.md';
+
+    async function loadSkillText() {
+      const res = await fetch(SKILL_PATH);
+      if (!res.ok) throw new Error('Skill file not found');
+      return await res.text();
+    }
+
+    document.getElementById('copySkillBtn').addEventListener('click', async (e) => {
+      const btn = e.currentTarget;
+      try {
+        const text = await loadSkillText();
+        await navigator.clipboard.writeText(text);
+        const orig = btn.textContent;
+        btn.textContent = 'הועתק! אפשר להדביק בצ׳אט ✓';
+        setTimeout(() => btn.textContent = orig, 2500);
+      } catch {
+        alert('לא הצלחנו לטעון את קובץ הסקיל. ודאי שהקובץ נמצא בנתיב: ' + SKILL_PATH);
+      }
+    });
+
+    document.getElementById('downloadSkillBtn').addEventListener('click', async () => {
+      try {
+        const text = await loadSkillText();
+        const blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'SKILL.md';
+        a.click();
+        URL.revokeObjectURL(url);
+      } catch {
+        alert('לא הצלחנו להוריד את הקובץ. ודאי שהקובץ נמצא בנתיב: ' + SKILL_PATH);
+      }
+    });
+
+    function copyText(card, text) {
+      navigator.clipboard.writeText(text);
+      const hint = card.querySelector('.copy-hint');
+      hint.textContent = 'הועתק ללוח ✓';
+      setTimeout(() => hint.textContent = 'לחצי להעתקה', 2000);
+    }
+
+    document.querySelectorAll('.info-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = document.getElementById(btn.dataset.target);
+        const isOpen = target.classList.contains('open');
+        closeAllBubbles();
+        if (!isOpen) {
+          target.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    function closeAllBubbles() {
+      document.querySelectorAll('.info-bubble').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.info-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    }
+
+    document.addEventListener('click', closeAllBubbles);
+  </script>
+</body>
+</html>
