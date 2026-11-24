@@ -1,9 +1,10 @@
-# Bridge-iT Parents Knowledge (IL Civic Skills)
+# Bridge-iT × כזו אני — Parents Knowledge (IL Civic Skills)
 
-Open-source, non-commercial agent skills by Bridge-iT for navigating official Israeli child rights, special education committees, and public services in Hebrew.
+Open-source, non-commercial agent skills by Bridge-iT (https://www.dynamicbridge.io) and "כזו אני" (https://kazoani.com) for navigating official Israeli child rights, special education committees, and public services in Hebrew.
 
+- Author & Brands: Danya Dotan | Bridge-iT (https://www.dynamicbridge.io) | כזו אני (https://kazoani.com)
 - Privacy: No personal or medical data is collected or stored.
-- License: CC BY-NC 4.0 (Non-Commercial, Attribution to Bridge-iT required).
+- License: CC BY-NC 4.0 (Non-Commercial, Attribution to Bridge-iT / כזו אני required).
 
 ## Skills
 
