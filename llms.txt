@@ -11,3 +11,10 @@ Open-source, non-commercial agent skills by Bridge-iT (https://www.dynamicbridge
 ## Skills
 
 - [IL Child Rights Navigator](/skills/il-child-rights-navigator/SKILL.md): Action-oriented navigation for Israeli parents dealing with special education committees (ועדת זכאות ואפיון), missing protocols, appeals, and child rights.
+
+## Connector (MCP)
+
+- Endpoint: https://bridge-it-parents-knowledge.vercel.app/mcp (Streamable HTTP, stateless, read-only, no auth)
+- Tools: get_official_sources, get_message_template, get_action_framework
+- Privacy policy: https://bridge-it-parents-knowledge.vercel.app/privacy.html
+- Terms: https://bridge-it-parents-knowledge.vercel.app/terms.html
