@@ -21,6 +21,25 @@ For AI agents & crawlers, see [`llms.txt`](./llms.txt).
 
 ---
 
+## 🔌 Claude Plugin & Connector | תוסף ומחבר ל-Claude
+
+This repo is also the **Bridget** Claude plugin (`.claude-plugin/plugin.json`, `skills/`, `.mcp.json`).
+
+- **Connector (remote MCP, read-only, no auth):** `https://bridge-it-parents-knowledge.vercel.app/mcp`
+- **Tools:** `get_official_sources`, `get_message_template`, `get_action_framework`
+- **Source:** [`api/mcp.js`](./api/mcp.js) — stateless, no logging, no storage, no outbound calls
+- **Docs:** [bridge-it-parents-knowledge.vercel.app/#connector](https://bridge-it-parents-knowledge.vercel.app/#connector)
+
+## 🛡️ Privacy Policy
+
+The connector receives only tool names and short arguments (topic, template name, optional city) — never conversations, documents or a child's details — and does not log or store them. Full policy: [privacy.html](https://bridge-it-parents-knowledge.vercel.app/privacy.html) · Terms: [terms.html](https://bridge-it-parents-knowledge.vercel.app/terms.html) · Accessibility: [accessibility.html](https://bridge-it-parents-knowledge.vercel.app/accessibility.html)
+
+## 🆘 Support
+
+[danya@dynamicbridge.io](mailto:danya@dynamicbridge.io) · [GitHub issues](https://github.com/danyadotan/bridge-it-parents-knowledge/issues)
+
+---
+
 ## 🚀 How to Use | איך משתמשים
 
 1. **Quick use (Copy):** Open the landing page or copy the contents of [`SKILL.md`](./skills/il-child-rights-navigator/SKILL.md) and paste it into any chat (Gemini, Claude, ChatGPT).

@@ -259,28 +259,47 @@
     footer a { color: var(--primary); text-decoration: none; font-weight: 500; }
     footer a:hover { text-decoration: underline; }
     .ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
+
+    /* Accessibility */
+    .skip-link { position: absolute; right: -9999px; top: 0; background: var(--text); color: #fff; padding: 10px 16px; border-radius: 0 0 8px 8px; z-index: 100; text-decoration: none; font-weight: 600; }
+    .skip-link:focus { right: 16px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--primary-hover); outline-offset: 2px; }
+    button.prompt-card { font: inherit; color: inherit; text-align: right; width: 100%; }
+    .soon { font-size: 0.88rem; color: var(--muted); font-weight: 600; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+    /* Connector */
+    .connector { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+    .connector p { margin: 0 0 12px; color: var(--muted); }
+    .endpoint { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 16px; }
+    .endpoint code { direction: ltr; background: #f1f5f9; border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 0.92rem; word-break: break-all; }
+    .tool-list { margin: 0 0 12px; padding-right: 20px; }
+    .tool-list li { margin-bottom: 6px; }
+    .tool-list code { direction: ltr; unicode-bidi: embed; font-size: 0.88rem; background: var(--soft); padding: 1px 6px; border-radius: 4px; }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">דילוג לתוכן</a>
   <div class="container">
     <header>
       <div class="brand">
         <a href="https://www.dynamicbridge.io" target="_blank" rel="noopener">Bridge-iT</a>
-        <span>×</span>
+        <span aria-hidden="true">×</span>
         <a href="https://kazoani.com" target="_blank" rel="noopener">כזו אני</a>
       </div>
       <div class="header-links">
         <a class="gh-link" href="https://www.dynamicbridge.io" target="_blank" rel="noopener">Dynamic Bridge ↗</a>
         <a class="gh-link" href="https://kazoani.com" target="_blank" rel="noopener">כזו אני ↗</a>
-        <a class="gh-link" href="tel:+972542299000">📞 <span class="ltr">+972.54.22.99.000</span></a>
+        <a class="gh-link" href="tel:+972542299000"><span aria-hidden="true">📞 </span><span class="ltr">+972.54.22.99.000</span></a>
         <a class="gh-link" href="https://github.com/danyadotan/bridge-it-parents-knowledge" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <div class="privacy-banner">
-        <strong>🔒 פרטיות מלאה לפני הכל</strong>
-        הכלי הזה לא מבקש, לא אוסף ולא שומר שום מידע אישי — ובטח שלא פרטים אישיים או רפואיים שלך או של ילדייך.
+        <strong><span aria-hidden="true">🔒 </span>פרטיות מלאה לפני הכל</strong>
+        הכלי הזה לא מבקש, לא אוסף ולא שומר שום מידע אישי — ובטח שלא פרטים אישיים או רפואיים שלך או של ילדייך. <a href="/privacy.html">למדיניות הפרטיות המלאה</a>.
         הוא שולף ומסדר עבורך אך ורק מידע ציבורי רשמי ועדכני על זכויות הילד וההורים מול משרד החינוך, העירייה, הבריאות והרווחה.
       </div>
 
@@ -293,17 +312,17 @@
 
         <div class="actions">
           <div class="btn-group">
-            <button id="copySkillBtn" class="btn btn-primary">העתק לשימוש מיידי</button>
-            <button class="info-btn" aria-label="מידע על העתקה" aria-expanded="false" data-target="bubble-copy">ⓘ</button>
-            <div id="bubble-copy" class="info-bubble" role="tooltip">
+            <button id="copySkillBtn" type="button" class="btn btn-primary">העתק לשימוש מיידי</button>
+            <button type="button" class="info-btn" aria-label="מידע על העתקה" aria-expanded="false" aria-controls="bubble-copy" data-target="bubble-copy">ⓘ</button>
+            <div id="bubble-copy" class="info-bubble" role="note">
               מעתיק את ההנחיות כטקסט. פותחים שיחה חדשה ב-Gemini, ChatGPT או Claude, מדביקים — ומתחילים לשאול מיד.
             </div>
           </div>
 
           <div class="btn-group">
-            <button id="downloadSkillBtn" class="btn btn-secondary">הורד קובץ SKILL.md</button>
-            <button class="info-btn" aria-label="מידע על הורדה" aria-expanded="false" data-target="bubble-download">ⓘ</button>
-            <div id="bubble-download" class="info-bubble" role="tooltip">
+            <button id="downloadSkillBtn" type="button" class="btn btn-secondary">הורד קובץ SKILL.md</button>
+            <button type="button" class="info-btn" aria-label="מידע על הורדה" aria-expanded="false" aria-controls="bubble-download" data-target="bubble-download">ⓘ</button>
+            <div id="bubble-download" class="info-bubble" role="note">
               מוריד קובץ התקנה קבוע לסוכנים שתומכים בייבוא סקילס (כמו Gemini Skills או Claude), כך שהעוזר יופעל אוטומטית בכל שיחה עתידית.
             </div>
           </div>
@@ -328,23 +347,23 @@
       <section>
         <h2>איך מתחילים? (לחצי על דוגמה להעתקה)</h2>
         <div class="grid">
-          <div class="card prompt-card" onclick="copyText(this, 'לא קיבלתי עד היום את הפרוטוקולים ומסמכי ועדת הזכאות והאפיון מ-2020 ומ-2023. מה עושים עכשיו?')">
+          <button type="button" class="card prompt-card" data-copy="לא קיבלתי עד היום את הפרוטוקולים ומסמכי ועדת הזכאות והאפיון מ-2020 ומ-2023. מה עושים עכשיו?">
             <span class="prompt-tag">מסמכים חסרים</span>
-            <p class="prompt-text">"לא קיבלתי את הפרוטוקולים של ועדת הזכאות מ-2020 ו-2023. מה עושים עכשיו?"</p>
-            <span class="copy-hint">לחצי להעתקה</span>
-          </div>
+            <span class="prompt-text" style="display:block">"לא קיבלתי את הפרוטוקולים של ועדת הזכאות מ-2020 ו-2023. מה עושים עכשיו?"</span>
+            <span class="copy-hint" aria-live="polite">לחצי להעתקה</span>
+          </button>
 
-          <div class="card prompt-card" onclick="copyText(this, 'קיבלתי זימון לוועדת זכאות ואפיון בעוד שבועיים ואני מוצפת. מה הזכויות שלי ומה הצעד הראשון?')">
+          <button type="button" class="card prompt-card" data-copy="קיבלתי זימון לוועדת זכאות ואפיון בעוד שבועיים ואני מוצפת. מה הזכויות שלי ומה הצעד הראשון?">
             <span class="prompt-tag">הכנה לוועדה</span>
-            <p class="prompt-text">"קיבלתי זימון לוועדת זכאות ואפיון בעוד שבועיים. מה הזכויות שלי ומה הצעד הראשון?"</p>
-            <span class="copy-hint">לחצי להעתקה</span>
-          </div>
+            <span class="prompt-text" style="display:block">"קיבלתי זימון לוועדת זכאות ואפיון בעוד שבועיים. מה הזכויות שלי ומה הצעד הראשון?"</span>
+            <span class="copy-hint" aria-live="polite">לחצי להעתקה</span>
+          </button>
 
-          <div class="card prompt-card" onclick="copyText(this, 'המועד של ועדת הזכאות לא מתאים לי ואני צריכה לדחות אותו. למי פונים ומה כותבים?')">
+          <button type="button" class="card prompt-card" data-copy="המועד של ועדת הזכאות לא מתאים לי ואני צריכה לדחות אותו. למי פונים ומה כותבים?">
             <span class="prompt-tag">דחיית מועד</span>
-            <p class="prompt-text">"המועד של ועדת הזכאות לא מתאים לי ואני צריכה לדחות אותו. למי פונים ומה כותבים?"</p>
-            <span class="copy-hint">לחצי להעתקה</span>
-          </div>
+            <span class="prompt-text" style="display:block">"המועד של ועדת הזכאות לא מתאים לי ואני צריכה לדחות אותו. למי פונים ומה כותבים?"</span>
+            <span class="copy-hint" aria-live="polite">לחצי להעתקה</span>
+          </button>
         </div>
       </section>
 
@@ -352,16 +371,44 @@
         <h2>כלים משלימים וסקילס נוספים מבית Bridge-iT</h2>
         <div class="grid">
           <div class="card placeholder-card">
-            <h3>📌 מה הצעד הבא שלך כאן?</h3>
+            <h3><span aria-hidden="true">📌 </span>מה הצעד הבא שלך כאן?</h3>
             <p>טאב קטן שיושב בצד המסך ושומר בדפדפן שלך מה עשית ומה הצעד הבא — כדי שאם יצאת מהמחשב באמצע משימה, תחזרי בדיוק לאותה נקודה.</p>
-            <a class="placeholder-link" href="#TODO-ADD-LINK">קישור יתווסף כאן בקרוב →</a>
+            <span class="soon">בקרוב</span>
           </div>
 
           <div class="card placeholder-card">
-            <h3>➕ מקום לסקיל נוסף</h3>
+            <h3><span aria-hidden="true">➕ </span>מקום לסקיל נוסף</h3>
             <p>מקום שמור לסקיל הבא של Bridge-iT (למשל: התמצאות במערכת המשפט, ביטוח לאומי או כלי עזר נוסף).</p>
-            <a class="placeholder-link" href="#TODO-ADD-SKILL">בבנייה →</a>
+            <span class="soon">בבנייה</span>
           </div>
+        </div>
+      </section>
+
+      <section id="connector" aria-labelledby="connector-title">
+        <h2 id="connector-title">מחבר Bridget ל-Claude (MCP)</h2>
+        <div class="connector">
+          <p>Bridget זמינה גם כתוסף ל-Claude, עם מחבר קטן לקריאה בלבד שמחזיר ל-Claude את המקורות הרשמיים לכל הליך ותבניות הודעה מוכנות בעברית. המחבר לא מקבל את השיחה שלך ולא שומר שום מידע.</p>
+          <div class="endpoint">
+            <code id="mcpUrl">https://bridge-it-parents-knowledge.vercel.app/mcp</code>
+            <button id="copyMcpBtn" type="button" class="btn btn-secondary">העתק כתובת</button>
+            <span id="mcpStatus" class="sr-only" aria-live="polite"></span>
+          </div>
+          <p><strong>איך מחברים:</strong> מתקינים את התוסף Bridget מספריית התוספים של Claude, או מוסיפים ב-Claude מחבר מותאם אישית (custom connector) עם הכתובת שלמעלה. לא נדרשת התחברות.</p>
+          <p><strong>הכלים במחבר:</strong></p>
+          <ul class="tool-list">
+            <li><code>get_official_sources</code> — המקורות הרשמיים שצריך לבדוק לפי סוג ההליך (כל זכות, פורטל הורים, gov.il, ביטוח לאומי), ואיזה גורם מקומי מטפל.</li>
+            <li><code>get_message_template</code> — תבניות הודעה בעברית: בקשת פרוטוקולים, דחיית ועדה, בקשת חומרים לפני ועדה, בירור מי מטפל.</li>
+            <li><code>get_action_framework</code> — מבנה התשובה: איפה נמצאים, צעד אחד מיידי, זכויות, מה הלאה, למי פונים.</li>
+          </ul>
+          <p><strong>דוגמאות לשאלות:</strong> "קיבלתי החלטה של ועדת זכאות ואני לא מסכימה איתה. מה עושים?" · "תכתבי לי בקשה לפרוטוקולים מ-2021 ו-2022" · "איך מבקשים לדחות ועדה בתל אביב?"</p>
+        </div>
+      </section>
+
+      <section id="support" aria-labelledby="support-title">
+        <h2 id="support-title">תמיכה ויצירת קשר</h2>
+        <div class="card">
+          <p style="margin:0">שאלות, תקלות או הצעות לשיפור: <a href="mailto:danya@dynamicbridge.io">danya@dynamicbridge.io</a> · וואטסאפ / טלפון: <a href="https://wa.me/972542299000" target="_blank" rel="noopener"><span class="ltr">+972.54.22.99.000</span></a> · <a href="https://github.com/danyadotan/bridge-it-parents-knowledge/issues" target="_blank" rel="noopener">דיווח ב-GitHub</a>.
+          מסמכים: <a href="/privacy.html">מדיניות פרטיות</a> · <a href="/terms.html">תנאי שימוש</a> · <a href="/accessibility.html">הצהרת נגישות</a>.</p>
         </div>
       </section>
 
@@ -379,6 +426,9 @@
           <a href="https://www.dynamicbridge.io" target="_blank" rel="noopener">dynamicbridge.io</a> ·
           <a href="https://kazoani.com" target="_blank" rel="noopener">kazoani.com</a> ·
           <a href="/llms.txt">llms.txt לסוכנים</a> ·
+          <a href="/privacy.html">מדיניות פרטיות</a> ·
+          <a href="/terms.html">תנאי שימוש</a> ·
+          <a href="/accessibility.html">הצהרת נגישות</a> ·
           <a href="https://github.com/danyadotan/bridge-it-parents-knowledge" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
@@ -401,6 +451,7 @@
         await navigator.clipboard.writeText(text);
         const orig = btn.textContent;
         btn.textContent = 'הועתק! אפשר להדביק בצ׳אט ✓';
+        document.getElementById('mcpStatus').textContent = 'ההנחיות הועתקו';
         setTimeout(() => btn.textContent = orig, 2500);
       } catch {
         alert('לא הצלחנו לטעון את קובץ הסקיל. ודאי שהקובץ נמצא בנתיב: ' + SKILL_PATH);
@@ -422,12 +473,28 @@
       }
     });
 
-    function copyText(card, text) {
-      navigator.clipboard.writeText(text);
-      const hint = card.querySelector('.copy-hint');
-      hint.textContent = 'הועתק ללוח ✓';
-      setTimeout(() => hint.textContent = 'לחצי להעתקה', 2000);
-    }
+    document.querySelectorAll('.prompt-card').forEach(card => {
+      card.addEventListener('click', async () => {
+        const hint = card.querySelector('.copy-hint');
+        try { await navigator.clipboard.writeText(card.dataset.copy); hint.textContent = 'הועתק ללוח ✓'; }
+        catch { hint.textContent = 'ההעתקה לא הצליחה — אפשר לסמן ולהעתיק ידנית'; }
+        setTimeout(() => hint.textContent = 'לחצי להעתקה', 2500);
+      });
+    });
+
+    document.getElementById('copyMcpBtn').addEventListener('click', async (e) => {
+      const btn = e.currentTarget, status = document.getElementById('mcpStatus');
+      try {
+        await navigator.clipboard.writeText(document.getElementById('mcpUrl').textContent.trim());
+        btn.textContent = 'הועתק ✓'; status.textContent = 'כתובת המחבר הועתקה';
+      } catch { status.textContent = 'ההעתקה לא הצליחה'; }
+      setTimeout(() => { btn.textContent = 'העתק כתובת'; status.textContent = ''; }, 2500);
+    });
+
+    // Announce links that open in a new tab
+    document.querySelectorAll('a[target="_blank"]').forEach(a => {
+      const s = document.createElement('span'); s.className = 'sr-only'; s.textContent = ' (נפתח בכרטיסייה חדשה)'; a.appendChild(s);
+    });
 
     document.querySelectorAll('.info-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -448,6 +515,7 @@
     }
 
     document.addEventListener('click', closeAllBubbles);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllBubbles(); });
   </script>
 </body>
 </html>
