@@ -1,6 +1,6 @@
 {
   "name": "bridget-il-child-rights",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Hebrew-language workflow for parents in Israel navigating special-education committees (ועדת זכאות ואפיון), missing records, postponement requests, appeals, and related child-rights procedures. Bridget checks current official sources, separates national rules from local practice, identifies one practical next step, and drafts a concise message in Hebrew. It includes a read-only connector that returns official source links and Hebrew message templates; it receives no conversation content and stores nothing. General information, not legal advice.",
   "author": {
     "name": "Danya Dotan, Bridge-iT",
@@ -47,45 +47,31 @@
             {
               "description": "Committee summons: parent needs the first step before an eligibility and placement committee. Expected: Hebrew answer in the action-hierarchy structure with Kol Zchut and Parents Portal links and a one-line not-legal-advice note.",
               "prompt": "קיבלתי זימון לוועדת זכאות ואפיון בעוד שבועיים. מה הצעד הראשון?",
-              "tools_triggered": [
-                "get_official_sources",
-                "get_action_framework"
-              ],
+              "tools_triggered": "get_official_sources, get_action_framework",
               "expected_behavior": "Calls get_official_sources with topic eligibility_committee and get_action_framework. Answers in Hebrew: where you are now, one immediate step, relevant rights, next stages, who to contact, with official links."
             },
             {
               "description": "Missing protocols from past years.",
               "prompt": "לא קיבלתי את הפרוטוקולים של ועדת הזכאות מ-2021 ומ-2023. איך מבקשים אותם?",
-              "tools_triggered": [
-                "get_official_sources",
-                "get_message_template"
-              ],
+              "tools_triggered": "get_official_sources, get_message_template",
               "expected_behavior": "Calls get_official_sources with topic missing_documents and get_message_template with request_missing_protocols. Points to the Parents Portal first, names the municipal special-education department, and gives a short Hebrew request message with placeholders for the years."
             },
             {
               "description": "Postponing a committee date in a named city.",
               "prompt": "המועד של הוועדה לא מתאים לי. אני גרה בתל אביב. איך מבקשים לדחות?",
-              "tools_triggered": [
-                "get_official_sources",
-                "get_message_template"
-              ],
+              "tools_triggered": "get_official_sources, get_message_template",
               "expected_behavior": "Calls get_official_sources with topic postponement and city תל אביב, and get_message_template with request_postponement. Names the committee secretariat at the local authority, tells the user to verify contact details on the city website, and gives a ready-to-fill Hebrew request offering 2-3 alternative dates."
             },
             {
               "description": "Appealing a committee decision.",
               "prompt": "אני לא מסכימה עם החלטת ועדת הזכאות. איך מגישים ערר?",
-              "tools_triggered": [
-                "get_official_sources",
-                "get_action_framework"
-              ],
+              "tools_triggered": "get_official_sources, get_action_framework",
               "expected_behavior": "Calls get_official_sources with topic appeal and get_action_framework. Explains next stages and that the Ministry of Education district appeals committee handles it, tells the user to verify the deadline on the linked sources rather than stating it from memory, and mentions free legal aid."
             },
             {
               "description": "Disabled child allowance eligibility check.",
               "prompt": "איך בודקים זכאות לקצבת ילד נכה מביטוח לאומי?",
-              "tools_triggered": [
-                "get_official_sources"
-              ],
+              "tools_triggered": "get_official_sources",
               "expected_behavior": "Calls get_official_sources with topic disabled_child_allowance. Links to Bituach Leumi and Kol Zchut, names the local Bituach Leumi branch, gives one immediate step, and does not promise eligibility."
             }
           ],
@@ -106,7 +92,7 @@
         }
       },
       "publication": {
-        "release_notes": "1.0.3 — First public release. Hebrew workflow skill for Israeli parents navigating special-education committees, missing records, postponements, appeals and related child-rights procedures, plus a read-only, no-auth connector with three tools (get_official_sources, get_message_template, get_action_framework). The connector receives only short tool arguments, keeps no logs and stores nothing."
+        "release_notes": "1.0.4 — First public release. Hebrew workflow skill for Israeli parents navigating special-education committees, missing records, postponements, appeals and related child-rights procedures, plus a read-only, no-auth connector with three tools (get_official_sources, get_message_template, get_action_framework). The connector receives only short tool arguments, keeps no logs and stores nothing."
       }
     }
   }
