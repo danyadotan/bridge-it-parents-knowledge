@@ -1,0 +1,10 @@
+{
+  "name": "bridge-it-il-child-rights-navigator",
+  "version": "0.2.0",
+  "description": "A Hebrew-language workflow for parents in Israel navigating special-education committees, missing records, postponement requests, appeals and related child-rights procedures. Checks current official sources, separates national rules from local practice, identifies one practical next step and drafts a concise Hebrew message. General information, not legal advice.",
+  "author": { "name": "Danya Dotan", "email": "danya@dynamicbridge.io", "url": "https://www.dynamicbridge.io" },
+  "homepage": "https://bridge-it-parents-knowledge.vercel.app/#connector",
+  "repository": "https://github.com/danyadotan/bridge-it-parents-knowledge",
+  "license": "CC-BY-NC-4.0",
+  "keywords": ["israel", "special-education", "child-rights", "hebrew", "parents"]
+}

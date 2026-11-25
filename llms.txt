@@ -18,3 +18,5 @@ Open-source, non-commercial agent skills by Bridge-iT (https://www.dynamicbridge
 - Tools: get_official_sources, get_message_template, get_action_framework
 - Privacy policy: https://bridge-it-parents-knowledge.vercel.app/privacy.html
 - Terms: https://bridge-it-parents-knowledge.vercel.app/terms.html
+- Accessibility statement: https://bridge-it-parents-knowledge.vercel.app/accessibility.html
+- Support: danya@dynamicbridge.io

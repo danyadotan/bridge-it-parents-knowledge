@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "bridget": {
+      "type": "http",
+      "url": "https://bridge-it-parents-knowledge.vercel.app/mcp"
+    }
+  }
+}
