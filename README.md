@@ -1,4 +1,8 @@
-# Bridge-iT × כזו אני — Parents Knowledge (IL Civic Skills)
+# Bridget: Israeli Child Rights
+
+A Hebrew-language workflow for parents in Israel navigating special-education committees (ועדת זכאות ואפיון), missing records, postponement requests, appeals, and related child-rights procedures. Bridget checks current official sources, separates national rules from local practice, identifies one practical next step, and drafts a concise message in Hebrew. It includes a read-only connector that returns official source links and Hebrew message templates; it receives no conversation content and stores nothing. General information, not legal advice.
+
+By Danya Dotan — Bridge-iT × כזו אני.
 
 Open-source, non-commercial AI agent skills for navigating official Israeli child rights, special education committees (ועדת זכאות ואפיון), and public services in Hebrew.
 

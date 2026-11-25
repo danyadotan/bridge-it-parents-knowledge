@@ -1,13 +1,14 @@
 {
   "name": "bridget-il-child-rights",
-  "version": "1.0.0",
-  "description": "A Hebrew-language workflow for parents in Israel navigating special-education committees, missing records, postponement requests, appeals and related child-rights procedures. Checks current official sources, separates national rules from local practice, identifies one practical next step and drafts a concise Hebrew message. General information, not legal advice.",
+  "displayName": "Bridget: Israeli Child Rights",
+  "version": "1.0.1",
+  "description": "Hebrew special-ed navigator",
   "author": {
-    "name": "Danya Dotan",
+    "name": "Danya Dotan, Bridge-iT",
     "email": "danya@dynamicbridge.io",
     "url": "https://www.dynamicbridge.io"
   },
-  "homepage": "https://bridge-it-parents-knowledge.vercel.app/#connector",
+  "homepage": "https://bridge-it-parents-knowledge.vercel.app/",
   "repository": "https://github.com/danyadotan/bridge-it-parents-knowledge",
   "license": "CC-BY-NC-4.0",
   "keywords": [
@@ -16,5 +17,10 @@
     "child-rights",
     "hebrew",
     "parents"
-  ]
+  ],
+  "icon": "./logo.png",
+  "documentationUrl": "https://bridge-it-parents-knowledge.vercel.app/#connector",
+  "supportUrl": "https://bridge-it-parents-knowledge.vercel.app/#support",
+  "privacyPolicyUrl": "https://bridge-it-parents-knowledge.vercel.app/privacy.html",
+  "termsOfServiceUrl": "https://bridge-it-parents-knowledge.vercel.app/terms.html"
 }
