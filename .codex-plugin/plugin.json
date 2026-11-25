@@ -1,0 +1,42 @@
+{
+  "name": "bridget-il-child-rights",
+  "version": "1.0.2",
+  "description": "A Hebrew-language workflow for parents in Israel navigating special-education committees (ועדת זכאות ואפיון), missing records, postponement requests, appeals, and related child-rights procedures. Bridget checks current official sources, separates national rules from local practice, identifies one practical next step, and drafts a concise message in Hebrew. It includes a read-only connector that returns official source links and Hebrew message templates; it receives no conversation content and stores nothing. General information, not legal advice.",
+  "author": {
+    "name": "Danya Dotan, Bridge-iT",
+    "email": "danya@dynamicbridge.io",
+    "url": "https://www.dynamicbridge.io"
+  },
+  "homepage": "https://bridge-it-parents-knowledge.vercel.app/",
+  "repository": "https://github.com/danyadotan/bridge-it-parents-knowledge",
+  "license": "CC-BY-NC-4.0",
+  "keywords": [
+    "israel",
+    "special-education",
+    "child-rights",
+    "hebrew",
+    "parents"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Bridget: Israeli Child Rights",
+    "shortDescription": "Hebrew special-ed navigator",
+    "longDescription": "A Hebrew-language workflow for parents in Israel navigating special-education committees (ועדת זכאות ואפיון), missing records, postponement requests, appeals, and related child-rights procedures. Bridget checks current official sources, separates national rules from local practice, identifies one practical next step, and drafts a concise message in Hebrew. It includes a read-only connector that returns official source links and Hebrew message templates; it receives no conversation content and stores nothing. General information, not legal advice.",
+    "developerName": "Danya Dotan, Bridge-iT",
+    "category": "Education & Research",
+    "capabilities": [],
+    "websiteURL": "https://bridge-it-parents-knowledge.vercel.app/",
+    "supportURL": "https://bridge-it-parents-knowledge.vercel.app/#support",
+    "privacyPolicyURL": "https://bridge-it-parents-knowledge.vercel.app/privacy.html",
+    "termsOfServiceURL": "https://bridge-it-parents-knowledge.vercel.app/terms.html",
+    "defaultPrompt": [
+      "קיבלתי זימון לוועדת זכאות ואפיון בעוד שבועיים. מה הצעד הראשון?",
+      "חסרים לי פרוטוקולים של ועדות משנים קודמות. איך מבקשים אותם?",
+      "אני לא מסכימה עם החלטת הוועדה. איך מגישים ערר?"
+    ],
+    "brandColor": "#2F9E6B",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
+}

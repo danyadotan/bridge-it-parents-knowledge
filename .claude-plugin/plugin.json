@@ -1,7 +1,7 @@
 {
   "name": "bridget-il-child-rights",
   "displayName": "Bridget: Israeli Child Rights",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hebrew special-ed navigator",
   "author": {
     "name": "Danya Dotan, Bridge-iT",
@@ -18,7 +18,7 @@
     "hebrew",
     "parents"
   ],
-  "icon": "./logo.png",
+  "icon": "./assets/logo.png",
   "documentationUrl": "https://bridge-it-parents-knowledge.vercel.app/#connector",
   "supportUrl": "https://bridge-it-parents-knowledge.vercel.app/#support",
   "privacyPolicyUrl": "https://bridge-it-parents-knowledge.vercel.app/privacy.html",
